@@ -1,0 +1,51 @@
+{
+  "name": "@baiwusanyu/utils-log",
+  "description": "",
+  "private": false,
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@6.32.4",
+  "keywords": [
+    "typescript",
+    "javascript",
+    "utils",
+    "vue",
+    "vue3",
+    "vite",
+    "react"
+  ],
+  "license": "MIT",
+  "author": "baiwusanyu-c",
+  "homepage": "https://github.com/baiwusanyu-c",
+  "repository": "https://github.com/baiwusanyu-c/bwsy-utils",
+  "bugs": "https://github.com/baiwusanyu-c/bwsy-utils/issues",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.ts",
+      "import": "./index.ts"
+    }
+  },
+  "files": [
+    "index.d.ts"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*",
+        "./index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+  },
+  "peerDependencies": {
+    "ansi-colors": "^4.1.3"
+  },
+  "devDependencies": {
+    "ansi-colors": "^4.1.3"
+  }
+}
