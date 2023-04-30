@@ -41,6 +41,7 @@
     }
   },
   "scripts": {
+    "publish:npm": "npm publish --no-git-checks --access public"
   },
   "peerDependencies": {
     "ansi-colors": "^4.1.3"

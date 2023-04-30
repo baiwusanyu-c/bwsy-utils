@@ -42,6 +42,7 @@
     }
   },
   "scripts": {
+    "publish:npm": "npm publish --no-git-checks --access public"
   },
   "devDependencies": {
     "@baiwusanyu/utils-log": "workspace:*",

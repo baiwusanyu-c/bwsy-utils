@@ -1,4 +1,5 @@
 import { log } from '@baiwusanyu/utils-log'
+
 /**
  * 生成一个异步任务列表
  * @param taskNum 异步任务数量
@@ -34,7 +35,7 @@ export async function runAsyncTaskList(
       }),
     )
     return res
-  } catch (e: Error) {
+  } catch (e: any) {
     log('error', e.message)
   }
 }

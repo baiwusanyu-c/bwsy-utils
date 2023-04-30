@@ -1,0 +1,13 @@
+{
+  "name": "@baiwusanyu/utils-build",
+  "description": "",
+  "type": "module",
+  "version": "0.0.0",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "build": "cross-env BUILD_MODE=prod tsup-node --config index.ts && pnpm run gulp:script",
+    "gulp:script": "gulp -require sucrase/register/ts -f gulp-file.ts"
+  }
+}
