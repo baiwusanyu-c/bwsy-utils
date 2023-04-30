@@ -1,0 +1,51 @@
+{
+  "name": "@baiwusanyu/utils-playground",
+  "description": "",
+  "private": false,
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@6.32.4",
+  "keywords": [
+    "typescript",
+    "javascript",
+    "utils",
+    "vue",
+    "vue3",
+    "vite",
+    "react"
+  ],
+  "license": "MIT",
+  "author": "baiwusanyu-c",
+  "homepage": "https://github.com/baiwusanyu-c",
+  "repository": "https://github.com/baiwusanyu-c/bwsy-utils",
+  "bugs": "https://github.com/baiwusanyu-c/bwsy-utils/issues",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.cjs",
+      "import": "./index.js"
+    }
+  },
+  "files": [
+
+    "index.d.ts"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*",
+        "./index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "dev": "esno index.ts"
+  },
+  "devDependencies": {
+    "@baiwusanyu/utils-log": "workspace:*",
+    "@baiwusanyu/utils-task": "workspace:*"
+  }
+}
