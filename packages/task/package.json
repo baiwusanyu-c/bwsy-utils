@@ -3,7 +3,7 @@
   "description": "",
   "private": false,
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
@@ -30,8 +30,10 @@
     }
   },
   "files": [
-
-    "index.d.ts"
+    "index.js",
+    "index.cjs",
+    "index.d.ts",
+    "README.md"
   ],
   "typesVersions": {
     "*": {
