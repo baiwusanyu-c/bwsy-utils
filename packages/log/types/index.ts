@@ -1,5 +1,4 @@
 /**
- * Represents a log entry.
- * @typedef {string} TLog
+ * 打印的种类类型
  */
 export declare type TLog = 'error' | 'warning' | 'info' | 'success'

@@ -82,7 +82,6 @@
     "simple-git-hooks": "^2.8.1",
     "sucrase": "^3.21.0",
     "tsup": "^6.7.0",
-    "typedoc": "^0.24.6",
     "typescript": "5.0.4",
     "vite": "^4.3.0",
     "vitest": "^0.30.1"

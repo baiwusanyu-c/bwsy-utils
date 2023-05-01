@@ -21,7 +21,6 @@ export const globalPrefix = Symbol('Global Prefix Key')
 /**
  * 设置打印的全局前缀
  * @param prefix 全局前缀
- * @returns void
  */
 export const setGlobalPrefix = (prefix: string) => {
   (globalThis as any)[globalPrefix] = prefix
@@ -32,7 +31,6 @@ export const setGlobalPrefix = (prefix: string) => {
  * @param type 打印输出类别
  * @param msg 打印输出信息
  * @param prefix 打印输出前缀，默认全局前缀
- * @returns void
  */
 export const log = (
   type: TLog,
