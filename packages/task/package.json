@@ -3,7 +3,7 @@
   "description": "",
   "private": false,
   "type": "module",
-  "version": "0.0.3-beta.3",
+  "version": "0.0.3-beta.4",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
@@ -44,7 +44,7 @@
     }
   },
   "scripts": {
-    "publish:npm": "npm publish --no-git-checks --access public"
+    "publish:npm": "pnpm publish --no-git-checks --access public"
   },
   "devDependencies": {
     "@baiwusanyu/utils-log": "workspace:*",
