@@ -3,7 +3,7 @@
   "description": "",
   "private": false,
   "type": "module",
-  "version": "0.0.3-beta.0",
+  "version": "0.0.3-beta.1",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
@@ -19,14 +19,14 @@
   "homepage": "https://github.com/baiwusanyu-c",
   "repository": "https://github.com/baiwusanyu-c/bwsy-utils",
   "bugs": "https://github.com/baiwusanyu-c/bwsy-utils/issues",
-  "main": "./index.ts",
-  "module": "./index.ts",
+  "main": "./index.js",
+  "module": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "require": "./index.ts",
-      "import": "./index.ts"
+      "types": "./index.d.js",
+      "require": "./index.cjs",
+      "import": "./index.js"
     }
   },
   "files": [
