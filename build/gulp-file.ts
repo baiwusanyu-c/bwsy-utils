@@ -38,21 +38,28 @@ const copyPackageJsonFiles = async(
 }
 
 const movePkgToRootDist = async(entryPkg: Record<string, string>) => {
+  await fs.copy(`${path.resolve('../package.json')}`, `${distRoot}/package.json`)
+
   for (const srcKey in entryPkg)
     await copyPackageJsonFiles(entryPkg[srcKey], `${distRoot}/${srcKey}`)
 }
 
-// TODO 文档和 readme 生成
-const moveReadMeToRootDist = async() => {
+const moveREADMEToRootDist = async(entryPkg: Record<string, string>) => {
   await fs.copy(`${path.resolve('../README.md')}`, `${distRoot}/README.md`)
-  await fs.copy(`${path.resolve('../README.ZH-CN.md')}`, `${distRoot}/README.ZH-CN.md`)
+
+  for (const srcKey in entryPkg)
+    await fs.copy(`${entryPkg[srcKey]}/README.md`, `${distRoot}/${srcKey}/README.md`)
 }
 
 export default series(
-
   // 移动 package.json 到 dist
   async() => {
     const res = await movePkgToRootDist(entryPkg)
+    return res
+  },
+  // 移动 README 到 dist
+  async() => {
+    const res = await moveREADMEToRootDist(entryPkg)
     return res
   },
 )

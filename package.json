@@ -30,7 +30,8 @@
     }
   },
   "files": [
-    "index.d.ts"
+    "index.d.ts",
+    "README.md"
   ],
   "typesVersions": {
     "*": {
@@ -45,7 +46,6 @@
     "lint:fix": "eslint --fix ./ --ext .vue,.js,.ts,.jsx,.tsx,.json ",
     "dev": "pnpm run --filter @baiwusanyu/utils-playground dev",
     "build": "pnpm run --filter @baiwusanyu/utils-build build",
-    "gen:doc:json": "typedoc --options typedoc.config.cjs",
     "release": "bumpp package.json --commit --push --tag",
     "clean": "rimraf dist",
     "prepare": "npx simple-git-hooks",
@@ -53,11 +53,13 @@
     "test:update": "vitest -u",
     "test:coverage": "vitest --coverage"
   },
+  "dependencies": {
+    "@baiwusanyu/utils-log": "latest",
+    "@baiwusanyu/utils-task": "latest"
+  },
   "devDependencies": {
     "@baiwusanyu/eslint-config": "^1.0.12",
-    "@baiwusanyu/utils-log": "workspace:*",
     "@baiwusanyu/utils-playground": "workspace:*",
-    "@baiwusanyu/utils-task": "workspace:*",
     "@rollup/pluginutils": "^5.0.2",
     "@types/fs-extra": "^11.0.1",
     "@types/gulp": "^4.0.10",
