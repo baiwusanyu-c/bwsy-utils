@@ -3,7 +3,7 @@
   "description": "",
   "private": false,
   "type": "module",
-  "version": "0.0.3-beta.4",
+  "version": "0.0.3",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
@@ -49,6 +49,7 @@
     "dev": "pnpm run --filter @baiwusanyu/utils-playground dev",
     "build": "pnpm run --filter @baiwusanyu/utils-build build",
     "release": "bumpp package.json packages/*/package.json --commit --push --tag",
+    "publish:r": "pnpm -r publish:npm && pnpm run publish:npm",
     "publish:npm": "pnpm publish --no-git-checks --access public",
     "clean": "rimraf dist",
     "prepare": "npx simple-git-hooks",
@@ -57,8 +58,8 @@
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
-    "@baiwusanyu/utils-log": "workspace:*",
-    "@baiwusanyu/utils-task": "workspace:*"
+    "@baiwusanyu/utils-log": "latest",
+    "@baiwusanyu/utils-task": "latest"
   },
   "devDependencies": {
     "@baiwusanyu/eslint-config": "^1.0.12",
