@@ -3,7 +3,7 @@
   "description": "",
   "private": false,
   "type": "module",
-  "version": "0.0.3-beta.2",
+  "version": "0.0.3-beta.3",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
@@ -57,12 +57,11 @@
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
-    "@baiwusanyu/utils-log": "latest",
-    "@baiwusanyu/utils-task": "latest"
+    "@baiwusanyu/utils-log": "workspace:*",
+    "@baiwusanyu/utils-task": "workspace:*"
   },
   "devDependencies": {
     "@baiwusanyu/eslint-config": "^1.0.12",
-    "@baiwusanyu/utils-playground": "workspace:*",
     "@rollup/pluginutils": "^5.0.2",
     "@types/fs-extra": "^11.0.1",
     "@types/gulp": "^4.0.10",

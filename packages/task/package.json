@@ -3,7 +3,7 @@
   "description": "",
   "private": false,
   "type": "module",
-  "version": "0.0.3-beta.2",
+  "version": "0.0.3-beta.3",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@baiwusanyu/utils-log": "workspace:*",
+    "@types/ansi-colors": "^3.2.2",
     "ansi-colors": "^4.1.3"
   }
 }
