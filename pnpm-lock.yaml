@@ -3,19 +3,17 @@ lockfileVersion: '6.0'
 importers:
 
   .:
+    dependencies:
+      '@baiwusanyu/utils-log':
+        specifier: workspace:*
+        version: link:packages/log
+      '@baiwusanyu/utils-task':
+        specifier: workspace:*
+        version: link:packages/task
     devDependencies:
       '@baiwusanyu/eslint-config':
         specifier: ^1.0.12
         version: 1.0.12(eslint@8.38.0)(typescript@5.0.4)
-      '@baiwusanyu/utils-log':
-        specifier: workspace:*
-        version: link:packages/log
-      '@baiwusanyu/utils-playground':
-        specifier: workspace:*
-        version: link:play
-      '@baiwusanyu/utils-task':
-        specifier: workspace:*
-        version: link:packages/task
       '@rollup/pluginutils':
         specifier: ^5.0.2
         version: 5.0.2(rollup@3.19.1)
@@ -102,6 +100,9 @@ importers:
 
   packages/log:
     devDependencies:
+      '@types/ansi-colors':
+        specifier: ^3.2.2
+        version: 3.2.2
       ansi-colors:
         specifier: ^4.1.3
         version: 4.1.3
@@ -111,6 +112,9 @@ importers:
       '@baiwusanyu/utils-log':
         specifier: workspace:*
         version: link:../log
+      '@types/ansi-colors':
+        specifier: ^3.2.2
+        version: 3.2.2
       ansi-colors:
         specifier: ^4.1.3
         version: 4.1.3
@@ -625,6 +629,13 @@ packages:
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
+    dev: true
+
+  /@types/ansi-colors@3.2.2:
+    resolution: {integrity: sha512-DkX/S7NQKUZ+6w4i6/LwYj6yP5DWHNv3DnK79Kbrn6IfrIJdg69KFL69/LoSXuqb9otgXRo/wDFGTQxqSgeKPw==}
+    deprecated: This is a stub types definition. ansi-colors provides its own type definitions, so you do not need this installed.
+    dependencies:
+      ansi-colors: 4.1.3
     dev: true
 
   /@types/chai-subset@1.3.3:
