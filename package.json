@@ -3,7 +3,7 @@
   "description": "",
   "private": false,
   "type": "module",
-  "version": "1.0.1-beta.2",
+  "version": "1.0.1-beta.3",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
@@ -58,8 +58,8 @@
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
-    "@baiwusanyu/utils-log": "latest",
-    "@baiwusanyu/utils-task": "latest"
+    "@baiwusanyu/utils-log": "workspace:*",
+    "@baiwusanyu/utils-task": "workspace:*"
   },
   "devDependencies": {
     "@baiwusanyu/eslint-config": "^1.0.12",
