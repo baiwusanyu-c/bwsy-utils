@@ -45,7 +45,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Set npmrc for root packages
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > dist/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
