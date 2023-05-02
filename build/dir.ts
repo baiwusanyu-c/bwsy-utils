@@ -1,7 +1,7 @@
 export const entry = {
-  log: '../packages/log/index.ts',
-  task: '../packages/task/index.ts',
-  index: '../packages/core/index.ts',
+  log: '../packages/log/index.ts', // @baiwusanyu/utils-log
+  task: '../packages/task/index.ts', // @baiwusanyu/utils-task
+  index: '../packages/core/index.ts', // baiwusanyu-utils
 }
 
 export const entryPkg = {
