@@ -16,7 +16,7 @@ const baseConfig = {
   ],
   format: ['cjs', 'esm'],
   clean: true,
-  minify: false,
+  minify: true,
   dts: false,
   outDir: path.resolve(process.cwd(), '../dist'),
 
@@ -28,6 +28,7 @@ if (buildMode === 'prod') {
   for (const entryKey in entry) {
     const config = JSON.parse(JSON.stringify(baseConfig))
     config.entry = [entry[entryKey]]
+    // config.outDir = entry[entryKey]
     config.outDir = entryKey === 'index'
       ? path.resolve(process.cwd(), '../dist') : path.resolve(process.cwd(), `../dist/${entryKey}`)
     config.dts = true

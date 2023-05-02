@@ -40,3 +40,11 @@ export const run = async(command: string) => {
     app.on('close', resolve) //
   })
 }
+
+export const runTask = (displayName: string, command: string) => {
+  const fn = async() => {
+    await run(command)
+  }
+  fn.displayName = displayName
+  return fn
+}

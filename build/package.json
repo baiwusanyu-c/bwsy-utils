@@ -8,6 +8,7 @@
   "author": "",
   "scripts": {
     "build": "cross-env BUILD_MODE=prod tsup-node --config index.ts && pnpm run gulp:script",
-    "gulp:script": "gulp -require sucrase/register/ts -f gulp-file.ts"
+    "gulp:script": "gulp -require sucrase/register/ts -f gulp-file.ts",
+    "publish:npm": "gulp -require sucrase/register/ts -f publish.ts"
   }
 }

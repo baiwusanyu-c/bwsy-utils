@@ -5,10 +5,10 @@ importers:
   .:
     dependencies:
       '@baiwusanyu/utils-log':
-        specifier: workspace:*
+        specifier: latest
         version: link:packages/log
       '@baiwusanyu/utils-task':
-        specifier: workspace:*
+        specifier: latest
         version: link:packages/task
     devDependencies:
       '@baiwusanyu/eslint-config':

@@ -45,4 +45,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish to npm
-        run: cd dist && pnpm run publish:r
+        run: pnpm run publish:script
