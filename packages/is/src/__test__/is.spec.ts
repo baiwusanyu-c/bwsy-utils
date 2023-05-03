@@ -90,4 +90,21 @@ describe('is', () => {
         expect(isFunction({})).not.toBeTruthy()
         expect(isFunction([])).not.toBeTruthy()
     });
+
+    test('isObject should return true for object values', (t) => {
+        expect(isObject({})).toBeTruthy()
+        expect(isObject({ a: 1 })).toBeTruthy()
+        expect(isObject(Object.create(null as any))).toBeTruthy()
+    });
+
+    test('isObject should return false for non-object values', (t) => {
+        expect(isObject(null)).not.toBeTruthy()
+        expect(isObject(undefined)).not.toBeTruthy()
+        expect(isObject('foo')).not.toBeTruthy()
+        expect(isObject(true)).not.toBeTruthy()
+        expect(isObject(42)).not.toBeTruthy()
+        expect(isObject([])).not.toBeTruthy()
+        expect(isObject(function(){})).not.toBeTruthy()
+        expect(isObject(new Date())).not.toBeTruthy()
+    });
 })
