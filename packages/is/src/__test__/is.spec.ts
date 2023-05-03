@@ -59,4 +59,19 @@ describe('is', () => {
         expect(isString({})).not.toBeTruthy()
         expect(isString([])).not.toBeTruthy()
     });
+
+    test('isNumber should return true for number values', (t) => {
+        expect(isNumber(0)).toBeTruthy()
+        expect(isNumber(42)).toBeTruthy()
+        expect(isNumber(-3.14)).toBeTruthy()
+    });
+
+    test('isNumber should return false for non-number values', (t) => {
+        expect(isNumber(null)).not.toBeTruthy()
+        expect(isNumber(undefined)).not.toBeTruthy()
+        expect(isNumber('foo')).not.toBeTruthy()
+        expect(isNumber(true)).not.toBeTruthy()
+        expect(isNumber({})).not.toBeTruthy()
+        expect(isNumber([])).not.toBeTruthy()
+    });
 })
