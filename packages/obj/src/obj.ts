@@ -1,4 +1,4 @@
-import { isArray, isObject } from "@baiwusanyu/utils-is";
+import { isArray, isObject } from '@baiwusanyu/utils-is'
 
 export const extend = <
     T extends Record<string, any>,

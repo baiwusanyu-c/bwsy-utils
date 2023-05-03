@@ -58,9 +58,9 @@
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
+    "@baiwusanyu/utils-is": "workspace:*",
     "@baiwusanyu/utils-log": "workspace:*",
     "@baiwusanyu/utils-obj": "workspace:*",
-    "@baiwusanyu/utils-is": "workspace:*",
     "@baiwusanyu/utils-task": "workspace:*"
   },
   "devDependencies": {

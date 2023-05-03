@@ -4,30 +4,28 @@ export const isEmptyObj = (val: unknown) => JSON.stringify(val) === '{}'
 export const isBool = (val: unknown) => typeof val === 'boolean'
 
 // 判定字符串
-export const isString = (val: unknown) => typeof val == 'string' && val.constructor == String
+export const isString = (val: unknown) => typeof val === 'string' && val.constructor === String
 
 // 判定数字
 export const isNumber = (val: unknown) => typeof val === 'number'
 
 // 判定是否是方法
 export const isFunction = (val: unknown) =>
-    Object.prototype.toString.call(val) === '[object Function]' ||
-    Object.prototype.toString.call(val) === '[object AsyncFunction]'
+  Object.prototype.toString.call(val) === '[object Function]'
+    || Object.prototype.toString.call(val) === '[object AsyncFunction]'
 
 // 判定是否是对象
 export function isObject(val: unknown) {
-    if (val === undefined || val === null) {
-        return false
-    } else {
-        return toString.call(val) == '[object Object]'
-    }
+  if (val === undefined || val === null)
+    return false
+  else
+    return toString.call(val) === '[object Object]'
 }
 
 // 判定是否是数组
 export const isArray = (obj: unknown, func: null | undefined | Function = Array.isArray) => {
-    if (func) {
-        return func(obj)
-    } else {
-        return toString.call(obj) === '[object Array]'
-    }
+  if (func)
+    return func(obj)
+  else
+    return toString.call(obj) === '[object Array]'
 }
