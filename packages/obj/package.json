@@ -50,7 +50,5 @@
     "access": "public"
   },
   "peerDependencies": {},
-  "devDependencies": {
-    "@baiwusanyu/utils-log": "workspace:*"
-  }
+  "devDependencies": {}
 }
