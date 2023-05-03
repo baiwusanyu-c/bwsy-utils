@@ -42,4 +42,21 @@ describe('is', () => {
         expect(isBool({})).not.toBeTruthy()
         expect(isBool([])).not.toBeTruthy()
     });
+
+    test('isString should return true for string values', () => {
+        expect(isString('')).toBeTruthy()
+        expect(isString('foo')).toBeTruthy()
+        expect(isString(new String('bar'))).not.toBeTruthy()
+    });
+
+    test('isString should return false for non-string values', () => {
+        expect(isString(null)).not.toBeTruthy()
+        expect(isString(undefined)).not.toBeTruthy()
+
+        expect(isString(42)).not.toBeTruthy()
+        expect(isString('foo')).toBeTruthy()
+
+        expect(isString({})).not.toBeTruthy()
+        expect(isString([])).not.toBeTruthy()
+    });
 })
