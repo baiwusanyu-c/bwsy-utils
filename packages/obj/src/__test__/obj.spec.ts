@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { extend } from '../obj'
+import { extend, jsonClone } from '../obj'
 
 describe('obj', () => {
   test('extend: merge object', () => {
@@ -23,5 +23,24 @@ describe('obj', () => {
         head: 'head1',
       },
     )
+  })
+
+  test('jsonClone', () => {
+    const mockObj1 = {
+      foo: 'foo1',
+      bar: 'bar1',
+      head: 'head1',
+    }
+
+    const mergeRes = jsonClone(mockObj1)
+    expect(mergeRes).toMatchObject(
+      {
+        foo: 'foo1',
+        bar: 'bar1',
+        head: 'head1',
+      },
+    )
+
+    expect(mergeRes === mockObj1).not.toBeTruthy()
   })
 })
