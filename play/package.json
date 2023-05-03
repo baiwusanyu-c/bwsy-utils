@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@baiwusanyu/utils-log": "workspace:*",
+    "@baiwusanyu/utils-obj": "workspace:*",
     "@baiwusanyu/utils-task": "workspace:*"
   }
 }
