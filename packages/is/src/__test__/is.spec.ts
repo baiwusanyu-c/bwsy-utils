@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import {
     isEmptyObj,
+    isBool,
     isObject,
     isArray,
     isString,
@@ -23,5 +24,22 @@ describe('is', () => {
         expect(isEmptyObj([])).not.toBeTruthy()
         expect(isEmptyObj(null)).not.toBeTruthy()
         expect(isEmptyObj(undefined)).not.toBeTruthy()
+    });
+
+    test('isBool should return true for boolean values', () => {
+        expect(isBool(true)).toBeTruthy()
+        expect(isBool(false)).toBeTruthy()
+    });
+
+    test('isBool should return false for non-boolean values', () => {
+
+        expect(isBool(null)).not.toBeTruthy()
+        expect(isBool(undefined)).not.toBeTruthy()
+
+        expect(isBool(42)).not.toBeTruthy()
+        expect(isBool('foo')).not.toBeTruthy()
+
+        expect(isBool({})).not.toBeTruthy()
+        expect(isBool([])).not.toBeTruthy()
     });
 })
