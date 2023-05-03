@@ -74,4 +74,20 @@ describe('is', () => {
         expect(isNumber({})).not.toBeTruthy()
         expect(isNumber([])).not.toBeTruthy()
     });
+
+    test('isFunction should return true for function values', (t) => {
+        expect(isFunction(() => {})).toBeTruthy()
+        expect(isFunction(async () => {})).toBeTruthy();
+        expect(isFunction(function named() {})).toBeTruthy()
+        expect(isFunction(async function asyncNamed() {})).toBeTruthy()
+    });
+
+    test('isFunction should return false for non-function values', (t) => {
+        expect(isFunction(null)).not.toBeTruthy()
+        expect(isFunction(undefined)).not.toBeTruthy()
+        expect(isFunction('foo')).not.toBeTruthy()
+        expect(isFunction(true)).not.toBeTruthy()
+        expect(isFunction({})).not.toBeTruthy()
+        expect(isFunction([])).not.toBeTruthy()
+    });
 })
