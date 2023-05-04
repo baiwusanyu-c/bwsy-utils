@@ -30,7 +30,6 @@ export const isArray = (obj: unknown, func: null | undefined | Function = Array.
     return toString.call(obj) === '[object Array]'
 }
 
-// TODO: document and unit test
 // 判断是否由纯数字组成(不支持前导0与科学计数法)
 export function isNumberStr(str: string) {
   return /^[+-]?(0|([1-9]\d*))(\.\d+)?$/g.test(str)

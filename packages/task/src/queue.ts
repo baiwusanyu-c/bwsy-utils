@@ -1,7 +1,6 @@
 import { log as logger } from '@baiwusanyu/utils-log'
 import type { ITask, ITaskQueueHooks } from '../types'
 
-// TODO unit test
 export async function runTaskQueue(
   taskQueue: Array<ITask>,
   hook?: ITaskQueueHooks,

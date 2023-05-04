@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { deepClone, extend, jsonClone } from '../obj'
+import { deepClone, extend, extendDeep, jsonClone } from '../obj'
 
 describe('obj', () => {
   test('extend: merge object', () => {
@@ -84,5 +84,51 @@ describe('deepClone', () => {
   test('should not clone functions', () => {
     const func = () => 'hello'
     expect(deepClone(func)).toBe(func)
+  })
+})
+
+describe('extendDeep', () => {
+  test('should return an empty object when both inputs are empty', () => {
+    const result = extendDeep({}, {})
+    expect(result).toEqual({})
+  })
+
+  test('should return the first object when the second object is empty', () => {
+    const obj = { a: 1, b: 'test' }
+    const result = extendDeep(obj, {})
+    expect(result).toEqual(obj)
+  })
+
+  test('should copy simple properties from the second object to the first object', () => {
+    const obj1 = { a: 1, b: 'test' }
+    const obj2 = { c: 2, d: 'example' }
+    const expected = { ...obj1, ...obj2 }
+    const result = extendDeep(obj1, obj2)
+    expect(result).toEqual(expected)
+  })
+
+  test('should overwrite properties in the first object with properties in the second object', () => {
+    const obj1 = { a: 1, b: 'test' }
+    const obj2 = { b: 2, c: 'example' }
+    const expected = { ...obj1, ...obj2 }
+    const result = extendDeep(obj1, obj2)
+    expect(result).toEqual(expected)
+  })
+
+  test('should copy nested objects and arrays', () => {
+    const obj1 = { a: { b: { c: 'test' } } }
+    const obj2 = { a: { b: { d: 'example' } }, e: [1, 2, 3] }
+    const expected = { ...obj1, ...obj2 }
+    const result = extendDeep(obj1, obj2)
+    expect(result).toEqual(expected)
+  })
+
+  test('should handle circular references', () => {
+    const obj1: any = { a: null }
+    obj1.a = obj1
+    const obj2 = { b: 2 }
+    const expected = { ...obj1, ...obj2 }
+    const result = extendDeep(obj1, obj2)
+    expect(result).toEqual(expected)
   })
 })

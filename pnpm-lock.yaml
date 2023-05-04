@@ -107,6 +107,15 @@ importers:
 
   build: {}
 
+  packages/com:
+    devDependencies:
+      '@types/ansi-colors':
+        specifier: ^3.2.2
+        version: 3.2.2
+      ansi-colors:
+        specifier: ^4.1.3
+        version: 4.1.3
+
   packages/date:
     devDependencies:
       '@types/ansi-colors':
