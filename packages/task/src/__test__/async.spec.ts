@@ -19,10 +19,15 @@ describe('setAsyncTaskList', () => {
     await Promise.all(taskList)
 
     expect(taskFunc).toHaveBeenCalledTimes(5)
+    // @ts-expect-error ignore ts error
     expect(taskFunc.mock.calls[0][0]).toBe(0)
+    // @ts-expect-error ignore ts error
     expect(taskFunc.mock.calls[1][0]).toBe(1)
+    // @ts-expect-error ignore ts error
     expect(taskFunc.mock.calls[2][0]).toBe(2)
+    // @ts-expect-error ignore ts error
     expect(taskFunc.mock.calls[3][0]).toBe(3)
+    // @ts-expect-error ignore ts error
     expect(taskFunc.mock.calls[4][0]).toBe(4)
   })
 

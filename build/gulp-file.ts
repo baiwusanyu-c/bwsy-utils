@@ -9,7 +9,7 @@ const copyPackageJsonFiles = async(
   srcDir: string,
   destDir: string,
 ) => {
-  const destPaths = {} // 存储输出目录和源文件目录的对应关系
+  const destPaths = {} as Record<string, any> // 存储输出目录和源文件目录的对应关系
   fs.readdirSync(srcDir).forEach((file) => {
     const filePath = path.join(srcDir, file)
     const stat = fs.statSync(filePath)
