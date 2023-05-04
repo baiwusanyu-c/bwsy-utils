@@ -9,8 +9,8 @@ export const extend = <
 }
 
 export function extendDeep<
-  T extends Record<string, any>,
-  U extends Record<string, any>>(
+  T extends (Record<string, any> & any[]),
+  U extends (Record<string, any> & any[]) >(
   objFir: T,
   objSec: U,
 ): T & U {
@@ -18,16 +18,16 @@ export function extendDeep<
     objFir = {} as T
 
   if (Array.isArray(objSec))
-    return objSec.slice()
+    return objSec.slice() as T & U
 
   Object.keys(objSec).forEach((property) => {
     const sourceProperty = objSec[property]
     if (typeof sourceProperty === 'object')
-      objFir[property] = extendDeep(objSec[property], sourceProperty)
+      objFir[property as keyof typeof objFir] = extendDeep(objSec[property], sourceProperty)
     else
-      objFir[property] = sourceProperty
+      objFir[property as keyof typeof objFir] = sourceProperty
   })
-  return objFir
+  return objFir as T & U
 }
 
 export function jsonClone<T extends Record<any, any>>(val: T): T {
