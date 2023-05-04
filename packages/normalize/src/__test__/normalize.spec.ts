@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import {
   normalizeEllipsis,
+  normalizeNum2Comma,
   normalizePath,
   normalizeSizeUnits,
 } from '../normalize'
@@ -96,5 +97,57 @@ describe('normalizeSizeUnits', () => {
   test('returns "1.23 GB" when input is 1320702444', () => {
     const result = normalizeSizeUnits(1320702444)
     expect(result).toEqual('1.23 GB')
+  })
+})
+
+describe('normalizeNum2Comma function', () => {
+  test('should return "1,234.56" when input is 1234.56', () => {
+    const result = normalizeNum2Comma(1234.56)
+    expect(result).toBe('1,234.56')
+  })
+
+  test('should return "0.000123" when input is 0.000123', () => {
+    const result = normalizeNum2Comma(0.000123)
+    expect(result).toBe('0.000123')
+  })
+
+  test('should return "1,000,000" when input is 1000000', () => {
+    const result = normalizeNum2Comma(1000000)
+    expect(result).toBe('1,000,000')
+  })
+
+  test('should return "-123,456.789" when input is -123456.789', () => {
+    const result = normalizeNum2Comma(-123456.789)
+    expect(result).toBe('-123,456.789')
+  })
+
+  test('should return "1,000.123456" when input is 1000.123456789 and decimal is 6', () => {
+    const result = normalizeNum2Comma(1000.123456789, 6)
+    expect(result).toBe('1,000.123456')
+  })
+
+  test('should return "1,000.123" when input is 1000.123456789 and decimal is 3', () => {
+    const result = normalizeNum2Comma(1000.123456789, 3)
+    expect(result).toBe('1,000.123')
+  })
+
+  test('should return "0" when input is 0', () => {
+    const result = normalizeNum2Comma(0)
+    expect(result).toBe('0')
+  })
+
+  test('should return "NaN" when input is NaN', () => {
+    const result = normalizeNum2Comma(NaN)
+    expect(result).toBe('NaN')
+  })
+
+  test('should return "Infinity" when input is Infinity', () => {
+    const result = normalizeNum2Comma(Infinity)
+    expect(result).toBe('Infinity')
+  })
+
+  test('should return "-Infinity" when input is -Infinity', () => {
+    const result = normalizeNum2Comma(-Infinity)
+    expect(result).toBe('-Infinity')
   })
 })
