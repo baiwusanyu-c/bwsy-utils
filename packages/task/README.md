@@ -46,7 +46,7 @@ export interface ITaskQueueHooks {
 | taskFunc    | `(index: number) => Promise<T>` | `-` | 异步任务函数 |
 
 | 返回值 | 返回类型             | 说明 |
-|-----|------------------|--|
+|-----|------------------|---|
 | taskList | `Promise<any>[]` | 任务执行列表 |
 
 ### runAsyncTaskList

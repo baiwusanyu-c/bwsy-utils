@@ -4,6 +4,7 @@ import {
   isBool,
   isEmptyObj,
   isFunction,
+  isHttp,
   isNumber,
   isNumberStr,
   isObject,
@@ -163,5 +164,39 @@ describe('isNumberStr', () => {
     expect(isNumberStr('e')).toBe(false)
     expect(isNumberStr('1.23e-4')).toBe(false)
     expect(isNumberStr('00123')).toBe(false)
+  })
+})
+
+describe('isHttp function', () => {
+  test('should return true for http urls', () => {
+    expect(isHttp('http://www.example.com')).toBe(true)
+  })
+
+  test('should return true for https urls', () => {
+    expect(isHttp('https://www.example.com')).toBe(true)
+  })
+
+  test('should return false for non-http urls', () => {
+    expect(isHttp('ftp://www.example.com')).toBe(false)
+  })
+
+  test('should return false for non-url strings', () => {
+    expect(isHttp('not a url')).toBe(false)
+  })
+
+  test('should return true for urls with query parameters', () => {
+    expect(isHttp('http://www.example.com?param1=value1&param2=value2')).toBe(true)
+  })
+
+  test('should return true for urls with fragments', () => {
+    expect(isHttp('http://www.example.com#fragment')).toBe(true)
+  })
+
+  test('should return true for urls with both query parameters and fragments', () => {
+    expect(isHttp('http://www.example.com?param1=value1&param2=value2#fragment')).toBe(true)
+  })
+
+  test('should return false for empty string', () => {
+    expect(isHttp('')).toBe(false)
   })
 })
