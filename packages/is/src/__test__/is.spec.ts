@@ -5,6 +5,7 @@ import {
   isEmptyObj,
   isFunction,
   isNumber,
+  isNumberStr,
   isObject,
   isString,
 } from '../is'
@@ -121,5 +122,46 @@ describe('is', () => {
     expect(isArray(42)).not.toBeTruthy()
     expect(isArray({})).not.toBeTruthy()
     expect(isArray(() => {})).not.toBeTruthy()
+  })
+})
+
+describe('isNumberStr', () => {
+  test('returns true for valid positive integers', () => {
+    expect(isNumberStr('1')).toBe(true)
+    expect(isNumberStr('123')).toBe(true)
+    expect(isNumberStr('456789')).toBe(true)
+  })
+
+  test('returns true for valid negative integers', () => {
+    expect(isNumberStr('-1')).toBe(true)
+    expect(isNumberStr('-123')).toBe(true)
+    expect(isNumberStr('-456789')).toBe(true)
+  })
+
+  test('returns true for valid positive floating point numbers', () => {
+    expect(isNumberStr('0.1')).toBe(true)
+    expect(isNumberStr('1.0')).toBe(true)
+    expect(isNumberStr('123.45')).toBe(true)
+    expect(isNumberStr('456789.123456789')).toBe(true)
+  })
+
+  test('returns true for valid negative floating point numbers', () => {
+    expect(isNumberStr('-0.1')).toBe(true)
+    expect(isNumberStr('-1.0')).toBe(true)
+    expect(isNumberStr('-123.45')).toBe(true)
+    expect(isNumberStr('-456789.123456789')).toBe(true)
+  })
+
+  test('returns true for zero', () => {
+    expect(isNumberStr('0')).toBe(true)
+  })
+
+  test('returns false for invalid number strings', () => {
+    expect(isNumberStr('')).toBe(false)
+    expect(isNumberStr('.')).toBe(false)
+    expect(isNumberStr('1.2.3')).toBe(false)
+    expect(isNumberStr('e')).toBe(false)
+    expect(isNumberStr('1.23e-4')).toBe(false)
+    expect(isNumberStr('00123')).toBe(false)
   })
 })
