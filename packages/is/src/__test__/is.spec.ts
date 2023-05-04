@@ -10,6 +10,7 @@ import {
   isNumberStr,
   isObject,
   isString,
+  isUpperCase,
   isValidURL,
 } from '../is'
 
@@ -263,5 +264,30 @@ describe('isLowerCase', () => {
     expect(isLowerCase('abc.def')).toBe(false)
     expect(isLowerCase(' ')).toBe(false)
     expect(isLowerCase('')).toBe(false)
+  })
+})
+
+describe('isUpperCase function', () => {
+  test('should return true for uppercase letters', () => {
+    expect(isUpperCase('HELLO')).toBe(true)
+    expect(isUpperCase('WORLD')).toBe(true)
+    expect(isUpperCase('A')).toBe(true)
+    expect(isUpperCase('Z')).toBe(true)
+  })
+
+  test('should return false for lowercase letters and mixed case strings', () => {
+    expect(isUpperCase('hello')).toBe(false)
+    expect(isUpperCase('World')).toBe(false)
+    expect(isUpperCase('tExt')).toBe(false)
+  })
+
+  test('should return false for empty string', () => {
+    expect(isUpperCase('')).toBe(false)
+  })
+
+  test('should return false for non-letter strings', () => {
+    expect(isUpperCase('123')).toBe(false)
+    expect(isUpperCase('#$%')).toBe(false)
+    expect(isUpperCase(' ')).toBe(false)
   })
 })
