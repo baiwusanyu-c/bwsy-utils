@@ -9,6 +9,7 @@ import {
   isNumberStr,
   isObject,
   isString,
+  isValidURL,
 } from '../is'
 
 describe('is', () => {
@@ -198,5 +199,47 @@ describe('isHttp function', () => {
 
   test('should return false for empty string', () => {
     expect(isHttp('')).toBe(false)
+  })
+})
+
+describe('isValidURL', () => {
+  test('returns true for a valid http URL', () => {
+    expect(isValidURL('http://www.example.com')).toBe(true)
+  })
+
+  test('returns true for a valid https URL', () => {
+    expect(isValidURL('https://www.example.com')).toBe(true)
+  })
+
+  test('returns true for a valid ftp URL', () => {
+    expect(isValidURL('ftp://ftp.example.com')).toBe(true)
+  })
+
+  test('returns true for a valid URL with port number', () => {
+    expect(isValidURL('https://www.example.com:8080')).toBe(true)
+  })
+
+  test('returns true for a valid URL with path', () => {
+    expect(isValidURL('https://www.example.com/path/to/file.html')).toBe(true)
+  })
+
+  test('returns true for a valid URL with query string', () => {
+    expect(isValidURL('https://www.example.com/search?q=term&page=2')).toBe(true)
+  })
+
+  test('returns true for a valid URL with special characters', () => {
+    expect(isValidURL('https://www.example.com/#/path?param=value&flag=true')).toBe(true)
+  })
+
+  test('returns false for an invalid URL', () => {
+    expect(isValidURL('www.example.com')).toBe(false)
+  })
+
+  test('returns false for an invalid URL without protocol', () => {
+    expect(isValidURL('example.com')).toBe(false)
+  })
+
+  test('returns false for an invalid URL with invalid top-level domain', () => {
+    expect(isValidURL('https://www.example.123')).toBe(false)
   })
 })
