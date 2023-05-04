@@ -1,6 +1,6 @@
 {
   "name": "baiwusanyu-utils",
-  "description": "",
+  "description": "baiwusanyu's common tool library.",
   "private": false,
   "type": "module",
   "version": "1.0.5",

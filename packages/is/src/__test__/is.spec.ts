@@ -2,6 +2,7 @@ import { describe, expect, test } from 'vitest'
 import {
   isArray,
   isBool,
+  isEmail,
   isEmptyObj,
   isFunction,
   isHttp,
@@ -289,5 +290,27 @@ describe('isUpperCase function', () => {
     expect(isUpperCase('123')).toBe(false)
     expect(isUpperCase('#$%')).toBe(false)
     expect(isUpperCase(' ')).toBe(false)
+  })
+})
+
+describe('isEmail', () => {
+  test('should return true for valid email addresses', () => {
+    expect(isEmail('example@example.com')).toBe(true)
+    expect(isEmail('john.doe@example.com')).toBe(true)
+    expect(isEmail('john-doe@example.com')).toBe(true)
+    expect(isEmail('john+doe@example.com')).toBe(true)
+    expect(isEmail('jane.doe@subdomain.example.com')).toBe(true)
+    expect(isEmail('jane.doe+tag@subdomain.example.com')).toBe(true)
+  })
+
+  test('should return false for invalid email addresses', () => {
+    expect(isEmail('example')).toBe(false)
+    expect(isEmail('example.com')).toBe(false)
+    expect(isEmail('example@com')).toBe(false)
+    expect(isEmail('example@.com')).toBe(false)
+    expect(isEmail('example@subdomain')).toBe(false)
+    expect(isEmail('example@subdomain.')).toBe(false)
+    expect(isEmail('example@subdomain.c')).toBe(false)
+    expect(isEmail('example@subdomain.123')).toBe(false)
   })
 })
