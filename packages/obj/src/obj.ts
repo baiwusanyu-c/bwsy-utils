@@ -9,8 +9,8 @@ export const extend = <
 }
 
 export function extendDeep<
-  T extends (Record<string, any> & any[]),
-  U extends (Record<string, any> & any[]) >(
+  T extends (Record<string, any> | any[]),
+  U extends (Record<string, any> | any[]) >(
   objFir: T,
   objSec: U,
 ): T & U {
