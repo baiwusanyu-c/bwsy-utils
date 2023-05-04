@@ -60,6 +60,7 @@
   "dependencies": {
     "@baiwusanyu/utils-is": "workspace:*",
     "@baiwusanyu/utils-log": "workspace:*",
+    "@baiwusanyu/utils-normalize": "workspace:*",
     "@baiwusanyu/utils-obj": "workspace:*",
     "@baiwusanyu/utils-task": "workspace:*"
   },

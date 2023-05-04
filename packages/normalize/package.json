@@ -1,9 +1,9 @@
 {
-  "name": "@baiwusanyu/utils-playground",
+  "name": "@baiwusanyu/utils-normalize",
   "description": "",
   "private": false,
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "packageManager": "pnpm@6.32.4",
   "keywords": [
     "typescript",
@@ -24,14 +24,16 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
+      "types": "./index.d.js",
       "require": "./index.cjs",
       "import": "./index.js"
     }
   },
   "files": [
-
-    "index.d.ts"
+    "index.js",
+    "index.cjs",
+    "index.d.ts",
+    "README.md"
   ],
   "typesVersions": {
     "*": {
@@ -42,13 +44,11 @@
     }
   },
   "scripts": {
-    "dev": "esno index.ts"
+    "publish:npm": "pnpm publish --no-git-checks --access public"
   },
-  "devDependencies": {
-    "@baiwusanyu/utils-is": "workspace:*",
-    "@baiwusanyu/utils-log": "workspace:*",
-    "@baiwusanyu/utils-normalize": "workspace:*",
-    "@baiwusanyu/utils-obj": "workspace:*",
-    "@baiwusanyu/utils-task": "workspace:*"
-  }
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {},
+  "devDependencies": {}
 }
