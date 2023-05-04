@@ -1,5 +1,9 @@
 import { describe, expect, test } from 'vitest'
-import { normalizeEllipsis, normalizePath } from '../normalize'
+import {
+  normalizeEllipsis,
+  normalizePath,
+  normalizeSizeUnits,
+} from '../normalize'
 describe('normalize', () => {
   test('normalizePath replaces backslashes with forward slashes', () => {
     const path = 'C:\\Users\\John\\Documents\\file.txt'
@@ -55,5 +59,42 @@ describe('normalize', () => {
   test('returns input string without ellipsis when input contains exactly (limitLen-1) characters', () => {
     const result = normalizeEllipsis('hello world', 10)
     expect(result).toEqual('hello worl...')
+  })
+})
+
+describe('normalizeSizeUnits', () => {
+  test('returns "0 bytes" when input is 0', () => {
+    const result = normalizeSizeUnits(0)
+    expect(result).toEqual('0 bytes')
+  })
+
+  test('returns "1 byte" when input is 1', () => {
+    const result = normalizeSizeUnits(1)
+    expect(result).toEqual('1 bytes')
+  })
+
+  test('returns "2 bytes" when input is 2', () => {
+    const result = normalizeSizeUnits(2)
+    expect(result).toEqual('2 bytes')
+  })
+
+  test('returns "1.00 KB" when input is 1024', () => {
+    const result = normalizeSizeUnits(1024)
+    expect(result).toEqual('1 KB')
+  })
+
+  test('returns "1.50 KB" when input is 1536', () => {
+    const result = normalizeSizeUnits(1536)
+    expect(result).toEqual('1.5 KB')
+  })
+
+  test('returns "1.00 MB" when input is 1048576', () => {
+    const result = normalizeSizeUnits(1048576)
+    expect(result).toEqual('1 MB')
+  })
+
+  test('returns "1.23 GB" when input is 1320702444', () => {
+    const result = normalizeSizeUnits(1320702444)
+    expect(result).toEqual('1.23 GB')
   })
 })

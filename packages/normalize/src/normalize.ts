@@ -16,3 +16,14 @@ export function normalizeEllipsis(str = '', limitLen = 24) {
   })
   return inx === -1 ? str : `${str.substr(0, inx)}...`
 }
+
+export function normalizeSizeUnits(bytes: number): string {
+  if (bytes === 0) return '0 bytes'
+
+  const units = ['bytes', 'KB', 'MB', 'GB']
+  const index = Math.floor(Math.log(bytes) / Math.log(1024))
+  const size = +(bytes / Math.pow(1024, index)).toFixed(2)
+  const unit = units[index]
+
+  return `${size} ${unit}`
+}
