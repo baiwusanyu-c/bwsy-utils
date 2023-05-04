@@ -5,6 +5,7 @@ import {
   isEmptyObj,
   isFunction,
   isHttp,
+  isLowerCase,
   isNumber,
   isNumberStr,
   isObject,
@@ -241,5 +242,26 @@ describe('isValidURL', () => {
 
   test('returns false for an invalid URL with invalid top-level domain', () => {
     expect(isValidURL('https://www.example.123')).toBe(false)
+  })
+})
+
+describe('isLowerCase', () => {
+  test('should return true for all lowercase letters', () => {
+    expect(isLowerCase('abcdefghijklmnopqrstuvwxyz')).toBe(true)
+  })
+
+  test('should return false for strings that contain uppercase letters', () => {
+    expect(isLowerCase('Abcdefg')).toBe(false)
+    expect(isLowerCase('aBcdefg')).toBe(false)
+    expect(isLowerCase('abcdefG')).toBe(false)
+    expect(isLowerCase('ABCD')).toBe(false)
+  })
+
+  test('should return false for strings that contain non-letter characters', () => {
+    expect(isLowerCase('abc123')).toBe(false)
+    expect(isLowerCase('abc-def')).toBe(false)
+    expect(isLowerCase('abc.def')).toBe(false)
+    expect(isLowerCase(' ')).toBe(false)
+    expect(isLowerCase('')).toBe(false)
   })
 })
