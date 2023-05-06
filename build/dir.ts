@@ -4,6 +4,7 @@ export const entry = {
   obj: '../packages/obj/index.ts', // @baiwusanyu/utils-obj
   is: '../packages/is/index.ts', // @baiwusanyu/utils-is
   normalize: '../packages/normalize/index.ts', // @baiwusanyu/utils-normalize
+  com: '../packages/com/index.ts', // @baiwusanyu/utils-com
   index: '../packages/core/index.ts', // baiwusanyu-utils
 }
 
@@ -13,4 +14,5 @@ export const entryPkg = {
   obj: '../packages/obj',
   is: '../packages/is',
   normalize: '../packages/normalize',
+  com: '../packages/com',
 }
