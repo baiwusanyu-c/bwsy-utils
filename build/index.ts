@@ -13,6 +13,7 @@ const baseConfig = {
     'fast-glob',
     'fs-extra',
     'magic-string',
+    'moment',
   ],
   format: ['cjs', 'esm'],
   clean: true,

@@ -33,7 +33,6 @@ jobs:
       - name: Build
         run: pnpm run build
 
-
       - name: Set Timezone
         run: |
           sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime

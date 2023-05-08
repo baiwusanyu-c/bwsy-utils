@@ -23,8 +23,10 @@ export function isObject(val: unknown) {
 }
 
 // 判定是否是数组
-export const isArray = (obj: unknown, func: null | undefined | Function = Array.isArray) => {
-  if (func)
+export const isArray = <T>(
+  obj: T,
+  func?: (target: T) => void) => {
+  if (isFunction(func) && func)
     return func(obj)
   else
     return toString.call(obj) === '[object Array]'
