@@ -1,5 +1,5 @@
 import { describe, expect, test, vi } from 'vitest'
-import { downloadFile } from '../com'
+import { createHash, downloadFile } from '../com'
 
 describe('downloadFile', () => {
   test('should create an <a> element with the given URL and click it', () => {
@@ -19,5 +19,17 @@ describe('downloadFile', () => {
 
     // Restore the original methods
     createElementSpy.mockRestore()
+  })
+})
+
+describe('createHash', () => {
+  test('should create an <a> element with the given URL and click it', () => {
+    const res = createHash(undefined, 'prefix', 'suffix')
+    expect(res.startsWith('prefix') && res.endsWith('suffix')).toBeTruthy()
+    expect(createHash(undefined, '', 'suffix').endsWith('suffix')).toBeTruthy()
+    expect(createHash(undefined, 'prefix').startsWith('prefix')).toBeTruthy()
+    expect(createHash()).toBeTruthy()
+    expect(createHash('test')).toBeTruthy()
+    expect(createHash(123456)).toBeTruthy()
   })
 })
