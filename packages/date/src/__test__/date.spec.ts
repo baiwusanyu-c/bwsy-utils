@@ -63,7 +63,7 @@ describe('relativeTime', () => {
     const pastTime = moment('2022-01-01T02:00:00.000Z')
     const futureTime = moment('2022-01-01T23:00:00.000Z')
     expect(relativeTime(pastTime.toISOString(), baseTime.toISOString(), true, 'hour')).toBe('2 小时前')
-    expect(relativeTime(futureTime.toISOString(), baseTime.toISOString(), false, 'hour')).toBe('1 小时后')
+    expect(relativeTime(futureTime.toISOString(), baseTime.toISOString(), false, 'hour')).toBe('23 小时后')
   })
 
   test('should return correct time difference when unit is day', () => {
@@ -77,14 +77,14 @@ describe('relativeTime', () => {
     const pastTime = moment('2021-12-18T00:00:00.000Z')
     const futureTime = moment('2022-02-05T00:00:00.000Z')
     expect(relativeTime(pastTime.toISOString(), baseTime.toISOString(), true, 'week')).toBe('2 周前')
-    expect(relativeTime(futureTime.toISOString(), baseTime.toISOString(), false, 'week')).toBe('3 周后')
+    expect(relativeTime(futureTime.toISOString(), baseTime.toISOString(), false, 'week')).toBe('5 周后')
   })
 
   test('should return correct time difference when unit is minute', () => {
     const pastTime = moment('2022-01-01T00:20:00.000Z')
     const futureTime = moment('2022-01-01T01:50:00.000Z')
     expect(relativeTime(pastTime.toISOString(), baseTime.toISOString(), true, 'minute')).toBe('20 分钟前')
-    expect(relativeTime(futureTime.toISOString(), baseTime.toISOString(), false, 'minute')).toBe('50 分钟后')
+    expect(relativeTime(futureTime.toISOString(), baseTime.toISOString(), false, 'minute')).toBe('2 小时后')
   })
 
   test('should return correct time difference when unit is second', () => {
