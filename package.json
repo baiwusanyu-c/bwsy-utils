@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "@baiwusanyu/utils-com": "workspace:*",
+    "@baiwusanyu/utils-date": "workspace:*",
     "@baiwusanyu/utils-is": "workspace:*",
     "@baiwusanyu/utils-log": "workspace:*",
     "@baiwusanyu/utils-normalize": "workspace:*",

@@ -5,6 +5,7 @@ export const entry = {
   is: '../packages/is/index.ts', // @baiwusanyu/utils-is
   normalize: '../packages/normalize/index.ts', // @baiwusanyu/utils-normalize
   com: '../packages/com/index.ts', // @baiwusanyu/utils-com
+  date: '../packages/date/index.ts', // @baiwusanyu/utils-date
   index: '../packages/core/index.ts', // baiwusanyu-utils
 }
 
@@ -15,4 +16,5 @@ export const entryPkg = {
   is: '../packages/is',
   normalize: '../packages/normalize',
   com: '../packages/com',
+  date: '../packages/date',
 }
