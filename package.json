@@ -71,7 +71,7 @@
     "@rollup/pluginutils": "^5.0.2",
     "@types/fs-extra": "^11.0.1",
     "@types/gulp": "^4.0.10",
-    "@types/node": "^18.0.0",
+    "@types/node": "^20.1.0",
     "@vitest/coverage-c8": "^0.30.1",
     "@vitest/ui": "^0.30.1",
     "ansi-colors": "^4.1.3",
