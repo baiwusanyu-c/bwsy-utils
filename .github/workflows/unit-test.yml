@@ -31,5 +31,12 @@ jobs:
       - name: lint fix
         run: pnpm run lint:fix
 
+      - name: Set Timezone
+        run: |
+          sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+          echo "Asia/Shanghai" | sudo tee /etc/timezone
+          date
+        shell: bash
+
       - name: unit test
         run: pnpm run test
