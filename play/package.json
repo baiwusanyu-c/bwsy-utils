@@ -45,6 +45,7 @@
     "dev": "esno index.ts"
   },
   "devDependencies": {
+    "@baiwusanyu/utils-com": "workspace:*",
     "@baiwusanyu/utils-is": "workspace:*",
     "@baiwusanyu/utils-log": "workspace:*",
     "@baiwusanyu/utils-normalize": "workspace:*",

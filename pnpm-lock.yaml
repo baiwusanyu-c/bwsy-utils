@@ -4,6 +4,9 @@ importers:
 
   .:
     dependencies:
+      '@baiwusanyu/utils-com':
+        specifier: workspace:*
+        version: link:packages/com
       '@baiwusanyu/utils-is':
         specifier: workspace:*
         version: link:packages/is
@@ -154,6 +157,9 @@ importers:
 
   play:
     devDependencies:
+      '@baiwusanyu/utils-com':
+        specifier: workspace:*
+        version: link:../packages/com
       '@baiwusanyu/utils-is':
         specifier: workspace:*
         version: link:../packages/is
