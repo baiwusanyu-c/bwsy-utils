@@ -11,11 +11,13 @@ export function setZeroDate(num: number) {
  * 获取某个月最后一天
  * @param year
  * @param month
+ * @param isFull
  */
 export function getLastDay(
   month: number,
   year: number = new Date().getFullYear(),
   isFull = false,
 ) {
-  return moment(`${year}-${month}`, 'YYYY-MM').endOf('month').format('YYYY-MM-DD')
+  const m = moment(`${year}-${month}`, 'YYYY-MM').endOf('month')
+  return isFull ? m.format('YYYY-MM-DD') : new Date(year, month, 0).getDate()
 }

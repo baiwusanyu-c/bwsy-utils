@@ -12,6 +12,9 @@ describe('setZeroDate', () => {
 
 describe('getLastDay', () => {
   test('basic', () => {
-    expect(getLastDay(12)).toBe(`${new Date().getFullYear()}-12-31`)
+    expect(getLastDay(12)).toBe(31)
+    expect(getLastDay(12, 2022)).toBe(31)
+    expect(getLastDay(12, undefined, true)).toBe(`${new Date().getFullYear()}-12-31`)
+    expect(getLastDay(12, 2022, true)).toBe('2022-12-31')
   })
 })
