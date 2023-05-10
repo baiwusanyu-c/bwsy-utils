@@ -67,3 +67,9 @@ export function isEmail(email: string) {
     = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return reg.test(email)
 }
+
+// 判断是否为中國手機號
+export function isMobileCN(num: string) {
+  const reg = /^1[3-9]\d{9}$/
+  return reg.test(num)
+}

@@ -7,6 +7,7 @@ import {
   isFunction,
   isHttp,
   isLowerCase,
+  isMobileCN,
   isNumber,
   isNumberStr,
   isObject,
@@ -312,5 +313,25 @@ describe('isEmail', () => {
     expect(isEmail('example@subdomain.')).toBe(false)
     expect(isEmail('example@subdomain.c')).toBe(false)
     expect(isEmail('example@subdomain.123')).toBe(false)
+  })
+})
+
+describe('isMobileCN', () => {
+  test('isMobileCN returns true for valid Chinese phone number', () => {
+    const phoneNumber = '13812345678'
+    const result = isMobileCN(phoneNumber)
+    expect(result).toBeTruthy()
+  })
+
+  test('isMobileCN returns false for invalid Chinese phone number', () => {
+    const phoneNumber = '1381234567'
+    const result = isMobileCN(phoneNumber)
+    expect(result).not.toBeTruthy()
+  })
+
+  test('isMobileCN returns false for non-Chinese phone number', () => {
+    const phoneNumber = '12345678901'
+    const result = isMobileCN(phoneNumber)
+    expect(result).not.toBeTruthy()
   })
 })
