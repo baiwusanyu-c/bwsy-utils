@@ -3,7 +3,7 @@ import {
   normalizeEllipsis,
   normalizeNum2Comma,
   normalizePath,
-  normalizeSizeUnits,
+  normalizeSizeUnits, normalizeVarStrEmpty,
 } from '../normalize'
 describe('normalize', () => {
   test('normalizePath replaces backslashes with forward slashes', () => {
@@ -149,5 +149,22 @@ describe('normalizeNum2Comma function', () => {
   test('should return "-Infinity" when input is -Infinity', () => {
     const result = normalizeNum2Comma(-Infinity)
     expect(result).toBe('-Infinity')
+  })
+})
+
+describe('normalizeVarStrEmpty function', () => {
+  test('should return ""', () => {
+    expect(normalizeVarStrEmpty('null')).toBe('')
+    expect(normalizeVarStrEmpty('undefined')).toBe('')
+    expect(normalizeVarStrEmpty(null)).toBe('')
+    expect(normalizeVarStrEmpty(undefined)).toBe('')
+    expect(normalizeVarStrEmpty('')).toBe('')
+    expect(normalizeVarStrEmpty(1)).toBe(1)
+    expect(normalizeVarStrEmpty(0)).toBe('')
+  })
+
+  test('should return params', () => {
+    const result = normalizeVarStrEmpty(1)
+    expect(result).toBe(1)
   })
 })

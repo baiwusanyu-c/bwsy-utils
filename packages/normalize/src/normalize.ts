@@ -41,3 +41,10 @@ export const normalizeNum2Comma = (num: number, decimal = 6): string => {
 
   return x1 + x2.slice(0, decimal + 1)
 }
+
+export function normalizeVarStrEmpty<T>(str?: T) {
+  if (!str || str === 'undefined' || str === 'null')
+    return ''
+
+  return str
+}
