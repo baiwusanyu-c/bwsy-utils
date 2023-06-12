@@ -56,7 +56,7 @@
     "test": "vitest",
     "test:update": "vitest -u",
     "test:coverage": "vitest --coverage",
-    "updated:deps": "npx taze -w && pnpm run init"
+    "update:deps": "npx taze -w && pnpm run init"
   },
   "dependencies": {
     "@baiwusanyu/utils-com": "workspace:*",
