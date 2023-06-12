@@ -4,7 +4,7 @@
   "private": false,
   "type": "module",
   "version": "1.0.13",
-  "packageManager": "pnpm@6.32.4",
+  "packageManager": "pnpm@7.33.1",
   "keywords": [
     "typescript",
     "javascript",
