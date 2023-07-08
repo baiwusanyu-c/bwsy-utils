@@ -76,14 +76,14 @@ export const createHash = (
  * @param err 调用错误回调
  */
 export const copyText = (
-    content: string,
-    resolve?: () => void,
-    err?: (err:any) => void) => {
+  content: string,
+  resolve?: () => void,
+  err?: (err: any) => void) => {
   navigator.clipboard.writeText(content)
-      .then(() => {
-        resolve && resolve()
-      })
-      .catch((error) => {
-        err && err(error)
-   });
+    .then(() => {
+      resolve && resolve()
+    })
+    .catch((error) => {
+      err && err(error)
+    })
 }
