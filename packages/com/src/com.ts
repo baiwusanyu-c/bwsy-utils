@@ -67,3 +67,23 @@ export const createHash = (
 ) => {
   return `${prefix}${hash(id)}${suffix}`
 }
+
+/**
+ * 将字符串复制到粘贴板
+ * 原生 Api 无需单测
+ * @param content 复制内容
+ * @param resolve 调用成功回调
+ * @param err 调用错误回调
+ */
+export const copyText = (
+    content: string,
+    resolve?: () => void,
+    err?: (err:any) => void) => {
+  navigator.clipboard.writeText(content)
+      .then(() => {
+        resolve && resolve()
+      })
+      .catch((error) => {
+        err && err(error)
+   });
+}

@@ -7,6 +7,7 @@ import {
   vi,
 } from 'vitest'
 import {
+  copyText,
   createHash,
   debounce,
   downloadFile,
