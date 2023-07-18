@@ -41,7 +41,7 @@ importers:
         version: 11.0.1
       '@types/gulp':
         specifier: ^4.0.11
-        version: 4.0.11
+        version: 4.0.13
       '@types/node':
         specifier: ^20.3.0
         version: 20.3.3
@@ -981,8 +981,8 @@ packages:
       '@types/node': 20.3.3
     dev: true
 
-  /@types/gulp@4.0.11:
-    resolution: {integrity: sha512-jy0nfcsjiGqO1prNsYMK/bHkTblIBgG04sL2nxPpnP9MyNicHp1SUblomjOla6JoW1qkR67HjFHqIibpPoShNQ==}
+  /@types/gulp@4.0.13:
+    resolution: {integrity: sha512-Ms20Q2tZ3MpThZGn4Ag6e7ifz/oQJFxsuiopqz5oHmhE6q2ohnELgafi5K/pKX/4ntlpidS61v/TXAguYsVcaA==}
     dependencies:
       '@types/undertaker': 1.2.8
       '@types/vinyl-fs': 3.0.2
