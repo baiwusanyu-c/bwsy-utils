@@ -10,7 +10,7 @@ import {
   isMobileCN,
   isNumber,
   isNumberStr,
-  isObject,
+  isObject, isRegex,
   isString,
   isUpperCase,
   isValidURL,
@@ -333,5 +333,17 @@ describe('isMobileCN', () => {
     const phoneNumber = '12345678901'
     const result = isMobileCN(phoneNumber)
     expect(result).not.toBeTruthy()
+  })
+})
+
+describe('isRegex', () => {
+  test('should return true for a regular expression', () => {
+    expect(isRegex(/[a-z]/)).toBe(true)
+  })
+
+  test('should return false for a non-regular expression value', () => {
+    expect(isRegex('not a regex')).toBe(false)
+    expect(isRegex(42)).toBe(false)
+    expect(isRegex(null)).toBe(false)
   })
 })

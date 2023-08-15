@@ -73,3 +73,8 @@ export function isMobileCN(num: string) {
   const reg = /^1[3-9]\d{9}$/
   return reg.test(num)
 }
+
+// 判断是否为正则表达式
+export function isRegex(value: unknown) {
+  return Object.prototype.toString.call(value) === '[object RegExp]'
+}
