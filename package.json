@@ -65,7 +65,8 @@
     "@baiwusanyu/utils-log": "workspace:*",
     "@baiwusanyu/utils-normalize": "workspace:*",
     "@baiwusanyu/utils-obj": "workspace:*",
-    "@baiwusanyu/utils-task": "workspace:*"
+    "@baiwusanyu/utils-task": "workspace:*",
+    "hash-sum": "^2.0.0"
   },
   "devDependencies": {
     "@baiwusanyu/eslint-config": "^1.0.12",
