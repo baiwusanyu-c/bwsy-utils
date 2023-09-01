@@ -993,7 +993,7 @@ packages:
   /@types/gulp@4.0.13:
     resolution: {integrity: sha512-Ms20Q2tZ3MpThZGn4Ag6e7ifz/oQJFxsuiopqz5oHmhE6q2ohnELgafi5K/pKX/4ntlpidS61v/TXAguYsVcaA==}
     dependencies:
-      '@types/undertaker': 1.2.8
+      '@types/undertaker': 1.2.9
       '@types/vinyl-fs': 3.0.2
       chokidar: 3.5.3
     dev: true
@@ -1068,8 +1068,8 @@ packages:
     resolution: {integrity: sha512-Z4TYuEKn9+RbNVk1Ll2SS4x1JeLHecolIbM/a8gveaHsW0Hr+RQMraZACwTO2VD7JvepgA6UO1A1VrbktQrIbQ==}
     dev: true
 
-  /@types/undertaker@1.2.8:
-    resolution: {integrity: sha512-gW3PRqCHYpo45XFQHJBhch7L6hytPsIe0QeLujlnFsjHPnXLhJcPdN6a9368d7aIQgH2I/dUTPFBlGeSNA3qOg==}
+  /@types/undertaker@1.2.9:
+    resolution: {integrity: sha512-rOGGHtWFP4jsSKXvW2BJn+hYIAJ4cvsJi5wscbfbBHQ0yLQvTUXKvL+i72cv+8biktveFLEqbMpsKmJQxYVPQw==}
     dependencies:
       '@types/node': 20.5.0
       '@types/undertaker-registry': 1.0.1
