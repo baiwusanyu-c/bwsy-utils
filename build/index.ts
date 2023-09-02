@@ -15,6 +15,10 @@ const baseConfig = {
     'magic-string',
     'moment',
   ],
+  noExternal:[
+    "hash-sum",
+    "ansi-colors"
+  ],
   format: ['cjs', 'esm'],
   clean: true,
   minify: false,
