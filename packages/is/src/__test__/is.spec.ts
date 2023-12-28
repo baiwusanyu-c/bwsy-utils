@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import {
   isArray,
-  isBool,
+  isBool, isElement,
   isEmail,
   isEmptyObj,
   isFunction,
@@ -345,5 +345,17 @@ describe('isRegex', () => {
     expect(isRegex('not a regex')).toBe(false)
     expect(isRegex(42)).toBe(false)
     expect(isRegex(null)).toBe(false)
+  })
+})
+
+describe('isElement', () => {
+  test('isElement should return true for valid Element', () => {
+    const mockElement: Element = document.createElement('div')
+    expect(isElement(mockElement)).toBe(true)
+  })
+
+  test('isElement should return false for invalid Element', () => {
+    const mockObject = { key: 'value' }
+    expect(isElement(mockObject)).toBe(false)
   })
 })
