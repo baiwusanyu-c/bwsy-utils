@@ -1,6 +1,6 @@
-import dayjs from 'dayjs/esm'
-import utc from 'dayjs/esm/plugin/utc'
-import duration from 'dayjs/esm/plugin/duration'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import duration from 'dayjs/plugin/duration'
 import type { OpUnitType } from 'dayjs'
 /**
  * 补0

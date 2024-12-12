@@ -12,12 +12,12 @@ const baseConfig = {
     'vue',
     'fast-glob',
     'fs-extra',
-    'magic-string',
-    'moment',
+    'magic-string'
   ],
   noExternal: [
     'hash-sum',
     'ansi-colors',
+    'dayjs'
   ],
   format: ['cjs', 'esm'],
   clean: true,
