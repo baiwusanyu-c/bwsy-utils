@@ -79,7 +79,7 @@
     "ansi-colors": "^4.1.3",
     "bumpp": "^9.9.0",
     "cross-env": "^7.0.3",
-    "eslint": "^9.16.0",
+    "eslint": "8.42.0",
     "esno": "^4.8.0",
     "fs-extra": "^11.2.0",
     "git-ensure": "^0.1.0",
