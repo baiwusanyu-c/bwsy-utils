@@ -6,7 +6,7 @@ import {
   test,
   vi,
 } from 'vitest'
-import dayjs from 'dayjs'
+import dayjs from 'dayjs/esm'
 import {
   formatDate,
   getLastDay,
