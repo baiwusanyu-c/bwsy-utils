@@ -1,6 +1,7 @@
-import dayjs, { OpUnitType } from 'dayjs'
+import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import duration from 'dayjs/plugin/duration'
+import type { OpUnitType } from 'dayjs'
 /**
  * 补0
  * @param num
@@ -34,7 +35,7 @@ export function formatDate(
   time: string,
   format = 'YYYY-MM-DD HH:mm:ss',
 ) {
-  dayjs.extend(utc);
+  dayjs.extend(utc)
   const dateObj = dayjs(time)
   if (dateObj.utcOffset() !== dayjs().utcOffset())
     dateObj.utcOffset('+08:00')
@@ -57,7 +58,7 @@ export function relativeTime(
   unit: OpUnitType = 'hour',
   lang = 'zh-cn',
 ) {
-  dayjs.extend(duration);
+  dayjs.extend(duration)
   const currentTime = dayjs(cTime)
   const relativeTime = dayjs(rTime)
   const diff = dayjs.duration(
