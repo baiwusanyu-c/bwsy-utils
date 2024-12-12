@@ -1,5 +1,6 @@
-import moment from 'moment'
-import type { unitOfTime } from 'moment'
+import dayjs, { OpUnitType } from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import duration from 'dayjs/plugin/duration'
 /**
  * 补0
  * @param num
@@ -19,7 +20,7 @@ export function getLastDay(
   year: number = new Date().getFullYear(),
   isFull = false,
 ) {
-  const m = moment(`${year}-${month}`, 'YYYY-MM').endOf('month')
+  const m = dayjs(`${year}-${month}`, 'YYYY-MM').endOf('month')
   return isFull ? m.format('YYYY-MM-DD') : new Date(year, month, 0).getDate()
 }
 
@@ -33,8 +34,9 @@ export function formatDate(
   time: string,
   format = 'YYYY-MM-DD HH:mm:ss',
 ) {
-  const dateObj = moment(time)
-  if (dateObj.utcOffset() !== moment().utcOffset())
+  dayjs.extend(utc);
+  const dateObj = dayjs(time)
+  if (dateObj.utcOffset() !== dayjs().utcOffset())
     dateObj.utcOffset('+08:00')
 
   return dateObj.format(format)// 格式化日期
@@ -52,18 +54,19 @@ export function relativeTime(
   rTime: string,
   cTime: string,
   isBefore = true,
-  unit: unitOfTime.StartOf = 'hour',
+  unit: OpUnitType = 'hour',
   lang = 'zh-cn',
 ) {
-  const currentTime = moment(cTime)
-  const relativeTime = moment(rTime)
-  const diff = moment.duration(
+  dayjs.extend(duration);
+  const currentTime = dayjs(cTime)
+  const relativeTime = dayjs(rTime)
+  const diff = dayjs.duration(
     isBefore
       ? currentTime.diff(relativeTime)
       : relativeTime.diff(currentTime),
   )
   let res = ''
-  const handleDiff = (unit: unitOfTime.StartOf) => {
+  const handleDiff = (unit: OpUnitType) => {
     let finalRes = ''
     let diffRes = 0
     switch (unit) {

@@ -4,7 +4,7 @@
   "private": false,
   "type": "module",
   "version": "1.0.18",
-  "packageManager": "pnpm@7.33.1",
+  "packageManager": "pnpm@9.15.0",
   "keywords": [
     "typescript",
     "javascript",
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@baiwusanyu/utils-log": "workspace:*",
-    "@types/ansi-colors": "^3.2.2",
+    "@types/ansi-colors": "^3.2.6",
     "ansi-colors": "^4.1.3"
   }
 }
